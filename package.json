@@ -1,0 +1,20 @@
+{
+  "name": "OrangeHRM-CypressWebTesting",
+  "version": "1.0.0",
+  "description": "Cypress POM tests for OrangeHRM with MochaAwesome reports",
+  "scripts": {
+    "test": "cypress run",
+    "test:report": "cypress run --reporter mochawesome --reporter-options reportDir=cypress/reports/mochawesome,overwrite=false,html=true,json=true",
+    "report:merge": "mochawesome-merge cypress/reports/mochawesome/*.json > mochawesome.json",
+    "report:generate": "marge mochawesome.json -f report -o cypress/reports/mochawesome/html",
+    "test:full": "npm run test:report && npm run report:merge && npm run report:generate",
+    "open": "cypress open"
+  },
+  "devDependencies": {
+    "cypress": "^14.3.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0",
+    "@faker-js/faker": "^8.4.1"
+  }
+}

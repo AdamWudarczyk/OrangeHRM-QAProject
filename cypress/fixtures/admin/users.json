@@ -1,0 +1,9 @@
+{
+  "existingUser": {
+    "username": "Admin",
+    "role": "Admin"
+  },
+  "nonExistingUser": {
+    "username": "NoSuchUser123"
+  }
+}

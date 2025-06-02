@@ -1,6 +1,6 @@
 // E2E test cases for login functionality of OrangeHRM
 // Includes valid and invalid login scenarios
-import { loginPage } from '../pages/login/loginPage.js';
+import { loginPage } from '../../pages/login/loginPage.js';
 
 describe('OrangeHRM Login Tests', () => {
     // Load test data from fixture before each test

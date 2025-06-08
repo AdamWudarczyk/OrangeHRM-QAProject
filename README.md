@@ -6,13 +6,13 @@ This project simulates a real-world QA Automation setup, not just static compone
 
 ##  Tech Stack
 
-- ✅ Cypress v14+
-- ✅ JavaScript (ES6+)
-- ✅ Mocha + MochaAwesome HTML reports
-- ✅ Page Object Model (POM) pattern
-- ✅ Faker (random data generation)
-- ✅ JSON fixtures for test data
-- ✅ Git + GitHub
+- Cypress v14+
+- JavaScript (ES6+)
+- Mocha + MochaAwesome HTML reports
+- Page Object Model (POM) pattern
+- Faker (random data generation)
+- JSON fixtures for test data
+- Git + GitHub
 
 ---
 ##  Project Structure
@@ -30,7 +30,7 @@ Portfolio-CypressOrangeHRM/\
 ├── videos/ → Cypress test video recordings\
 ├── cypress.config.js → Cypress configuration\
 ├── package.json → Project metadata and scripts\
-└── README.md → This file\
+└── README.md → This file
 
 ##  How to Run the Tests
 
@@ -60,11 +60,12 @@ Project includes real-world functional UI test coverage:
 
 - Login + error handling
 - My Info form: dropdowns, radioboxes
-- Employee list: checkboxes, search, delete
-- Add user (Admin module)
-- Recruitment module: upload, filter, reset
+- Employee list (PIM module): checkboxes, search, add, edit, delete employees
+- Admin User Management: search, filter by role, edit status, delete users
+- (in progress) Leave Management: assign leave requests with various leave types and date ranges
+- Recruitment module: upload, filter, reset functionality
 - Profile photo upload
-- Negative & boundary tests
+- Negative & boundary tests for form validations and UI feedback
 
 ### Learning Goals
 
@@ -75,6 +76,8 @@ This project is intended to demonstrate:
 - Smart data usage with fixtures and faker
 - Full HTML report generation for stakeholders
 - Professional test suite structure
+- Generating comprehensive MochaAwesome HTML reports for stakeholders
+- Realistic QA workflows covering CRUD operations in HRM system
 
 ___
 Created by Adam Wudarczyk

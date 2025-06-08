@@ -16,18 +16,21 @@ describe('OrangeHRM Admin – User Management Tests', () => {
     });
 
     it('searches for an existing user', () => {
+        // Enters a username and verifies that the user appears in the search results
         userManagementPage.getUsernameInput().type(usersData.existingUser.username);
         userManagementPage.getSearchButton().click();
         userManagementPage.getTableRows().should('contain', usersData.existingUser.username);
     });
 
     it('filters users by role using dropdown', () => {
+        // Selects a user role filter and checks that filtered results are displayed
         userManagementPage.selectRole(usersData.existingUser.role);
         userManagementPage.getSearchButton().click();
         userManagementPage.getTableRows().should('exist');
     });
 
     it('resets the search filters', () => {
+        // Fills in search filters, resets them, and verifies inputs are cleared
         userManagementPage.getUsernameInput().type(usersData.existingUser.username);
         userManagementPage.selectRole(usersData.existingUser.role);
         userManagementPage.getResetButton().click();
@@ -35,12 +38,14 @@ describe('OrangeHRM Admin – User Management Tests', () => {
     });
 
     it('selects a user via checkbox and shows delete button', () => {
+        // Checks the checkbox for a user and verifies the Delete button becomes visible
         userManagementPage.getTableRows().should('have.length.greaterThan', 1);
         userManagementPage.getCheckboxes().eq(1).scrollIntoView().check({ force: true });
         userManagementPage.getDeleteButton().should('be.visible');
     });
 
     it('edits status of a non-admin user', () => {
+        // Finds a non-admin user, opens edit page, toggles status if toggle exists, then saves
         userManagementPage.getTableRows().each(($row, index) => {
             const rowText = $row.text();
 
@@ -61,12 +66,13 @@ describe('OrangeHRM Admin – User Management Tests', () => {
                 });
 
                 userManagementPage.getSaveButton().click();
-                return false;
+                return false; // stop iterating after first non-admin user
             }
         });
     });
 
     it('shows no results for non-existing user', () => {
+        // Searches for a username that does not exist and verifies no results are displayed
         userManagementPage.getUsernameInput().type(usersData.nonExistingUser.username);
         userManagementPage.getSearchButton().click();
         userManagementPage.getTableRows().should('have.length', 0);

@@ -5,7 +5,7 @@ import { loginPage } from '../../pages/login/loginPage.js';
 describe('OrangeHRM Login Tests', () => {
     // Load test data from fixture before each test
     beforeEach(() => {
-        cy.fixture('logincredentials').as('login');
+        cy.fixture('login/logincredentials').as('login');
     });
 
     it('Logs in with valid credentials', () => {

@@ -2,19 +2,20 @@
 class LoginPage {
     // Navigates directly to the login page
     visit() {
-        cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+        cy.visit('/web/index.php/auth/login');
+        cy.url().should('include', '/auth/login');
     }
     // Returns the username input field
     getUsernameInput() {
-        return cy.get('input[name="username"]');
+        return cy.get('input[name="username"]', { timeout: 10000 }).should('be.visible');
     }
     // Returns the password input field
     getPasswordInput() {
-        return cy.get('input[name="password"]');
+        return cy.get('input[name="password"]', { timeout: 10000 }).should('be.visible');
     }
     // Returns the login button element
     getLoginButton() {
-        return cy.get('button[type="submit"]');
+        return cy.get('button[type="submit"]', { timeout: 10000 }).should('be.visible');
     }
     // Returns the element showing an error message after failed login
     getErrorMessage() {

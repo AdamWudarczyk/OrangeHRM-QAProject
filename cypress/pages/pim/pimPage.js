@@ -14,15 +14,17 @@ export class PimPage {
     getFirstNameInput() {
         return cy.get('input[name="firstName"]');
     }
-
+    // Returns the middle name input field
     getMiddleNameInput() {
         return cy.get('input[name="middleName"]');
     }
 
+    // Returns the last name input field and verifies it is visible
     getLastNameInput() {
         return cy.get('input[name="lastName"]').should('be.visible');
     }
 
+    // Returns the Employee ID input field
     getEmployeeIdInput() {
         return cy.get('.oxd-input-group:has(label:contains("Employee Id")) input')
     }
@@ -110,7 +112,7 @@ export class PimPage {
         this.getLastNameInput().clear().type(newLastName);
     }
 
-
+    // Updates first and last name fields with new values
     updateName(firstName, lastName) {
         this.getFirstNameInput().clear().type(firstName);
         this.getLastNameInput().clear().type(lastName);
